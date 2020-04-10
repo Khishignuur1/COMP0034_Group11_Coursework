@@ -1,6 +1,6 @@
 {#
 Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
-Adapted by Khishignuur
+Adapted by Khishignuur and Minh Phan
 #}
 
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ Adapted by Khishignuur
         {% if current_user.is_anonymous %}
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
-        </li>
+        </li>
         {% else %}
         <li class="nav-item">
             <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
@@ -72,7 +72,7 @@ Adapted by Khishignuur
     {% endwith %}
 
     {% block content %}
-    {# Child pages add page specific content here #}
+        {# Child pages add page specific content here #}
     {% endblock %}
 </div>
 </body>
