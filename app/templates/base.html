@@ -1,0 +1,79 @@
+{#
+Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
+Adapted by Khishignuur
+#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+</head>
+<body>
+<nav class="navbar navbar-expand bg-primary navbar-dark", style="background-color: #232f3e !important; font-size: 18px;">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">E-Clothier</a>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.home') }}">Items</a>
+        </li>
+        {% if current_user.is_anonymous %}
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.new_item') }}">Create Item</a>
+        </li>
+        {% endif %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.about') }}">About</a>
+        </li>
+
+    </ul>
+        <form class="form-inline ml-auto" action="search" method="post">
+        <input class="form-control" type="search" placeholder="Search for items" aria-label="Search" name="search_term" style="width: 326px;">
+        <button class="btn btn-primary btn-outline-light" type="submit", style="background-color: #febd69; color: #1d2124;">Search</button>
+    </form>
+    <ul class="navbar-nav">
+        {% if current_user.is_anonymous %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+        </li>
+        {% endif %}
+
+        {% if current_user.is_anonymous %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('auth.signup') }}">Sign-up</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('main.account') }}">Account</a>
+        </li>
+        {% endif %}
+
+    </ul>
+
+</nav>
+
+<br>
+<div role=main class="container" >
+    {# Displays flashed messages on a page #}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="alert-warning list-unstyled">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    {% block content %}
+    {# Child pages add page specific content here #}
+    {% endblock %}
+</div>
+</body>
+</html>

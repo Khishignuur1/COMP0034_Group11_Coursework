@@ -1,0 +1,25 @@
+{#
+Based on https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog
+Adapted by Khishignuur
+#}
+
+{% extends "base.html" %}
+{% block title %}Items{% endblock %}
+{% block content %}
+    {% for item in items %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="/static/imgs/default.jpg" style="height: 75px; width: 75px; margin-right: 25px;">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ item.author.username }}</a>
+              <small class="text-muted">{{ item.date_created.strftime('%Y-%m-%d') }}</small>
+            </div>
+            <h2><a class="article-title" href="{{ url_for('main.item', item_id=item.id) }}">{{ item.title }}</a></h2>
+            <p class="article-content"><b>Description:</b>  {{ item.content }}</p>
+            <p class="article-content"><b>Color:</b> {{ item.color }}  <b>Size:</b>  {{ item.size }}   <b>Price:</b>  £{{ item.price }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock %}
+
+

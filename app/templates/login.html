@@ -1,0 +1,18 @@
+{#
+Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
+Adapted by Khishignuur
+#}
+
+{% extends 'base.html' %}
+{% from "_formhelpers.html" import render_field %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<form method="post" novalidate style="position: absolute; left: 35%;">
+    {{ form.hidden_tag() }}
+    <dl style="width: 476px;">
+        {{ render_field(form.email, class='form-control') }}
+        {{ render_field(form.password, class='form-control') }}
+        <input type=submit value='Login' class='btn btn-primary'>
+    </dl>
+</form>
+{% endblock %}
