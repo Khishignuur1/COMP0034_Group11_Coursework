@@ -1,5 +1,5 @@
 """
-Written by Khishignuur
+Written by 17075800
 """
 
 
@@ -30,6 +30,3 @@ def create_db():
                      FOREIGN KEY(user_id) REFERENCES user(id))''')
 
     mydb.commit()
-
-
-
