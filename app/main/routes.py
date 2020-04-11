@@ -1,7 +1,7 @@
 """
     Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete and
     https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask_Blog
-    Adapted by Khishignuur
+    Adapted by 17075800
 """
 
 from datetime import datetime
