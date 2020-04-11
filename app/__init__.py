@@ -1,6 +1,6 @@
 """
 Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
-Adapted by Khishignuur
+Adapted by 17075800
 """
 from flask import Flask, render_template
 from flask_login import LoginManager
