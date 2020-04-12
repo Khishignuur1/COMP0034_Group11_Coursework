@@ -37,7 +37,7 @@ class ProdConfig(Config):
 class TestConfig(Config):
     TESTING = True
     CWD = dirname(abspath(__file__))
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(CWD, 'tests/test_data.sqlite')
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(CWD, 'tests/data.sqlite')
     WTF_CSRF_ENABLED = False
 
 class DevConfig(Config):
