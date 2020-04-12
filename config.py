@@ -14,6 +14,7 @@ class Config(object):
     # General Config
     DEBUG = False
     TESTING = False
+    WTF_CSRF_ENABLED = False
 
     # Forms config
     # Generated using the same method as the SECRET_KEY
