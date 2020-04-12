@@ -21,10 +21,10 @@ def index():
     return render_template('index.html')
 
 
-@bp_main.route("/home")
+@bp_main.route("/items")
 def home():
     items = Item.query.all()
-    return render_template('home.html', items=items)
+    return render_template('items.html', items=items)
 
 
 @bp_main.route('/about', methods=['GET'])
