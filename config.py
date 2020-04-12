@@ -7,14 +7,14 @@ from os.path import dirname, abspath, join
 
 class Config(object):
     """Set Flask base configuration"""
-    # CSRF_ENABLED = True
+
     # Secret key was randomly created using a Python console and enter 'import secrets' and then 'secrets.token_urlsafe(16)'
     SECRET_KEY = '7A0PSeGv1XcyeHEHIuO5Yw'
 
     # General Config
     DEBUG = False
     TESTING = False
-    WTF_CSRF_ENABLED = False
+
 
     # Forms config
     # Generated using the same method as the SECRET_KEY
@@ -33,11 +33,13 @@ class ProdConfig(Config):
     DEBUG = False
     TESTING = False
 
-
+    # Test config that disables wtf_csrf and sets the data base to a test data
 class TestConfig(Config):
     TESTING = True
+    CWD = dirname(abspath(__file__))
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + join(CWD, 'tests/test_data.sqlite')
     SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
-
+    WTF_CSRF_ENABLED = False
 
 class DevConfig(Config):
     DEBUG = True
