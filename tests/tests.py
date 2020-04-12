@@ -4,10 +4,10 @@ Written by 17075800
 from run import app
 import unittest
 import sqlite3
-
+from base import BaseTestCase
 
 # 1.Ensuring correct loading of basic pages and login required pages
-class LoadPageTest(unittest.TestCase):
+class LoadPageTest(BaseTestCase):
 
     # 1.1.Ensuring correct loading of basic pages
 
@@ -63,7 +63,7 @@ class LoadPageTest(unittest.TestCase):
 
 
 # 2. Ensure Sign up function works correctly
-class UserSignupTests(unittest.TestCase):
+class UserSignupTests(BaseTestCase):
 
     # Ensure Signup page loads correctly
     def test_signup(self):
@@ -119,7 +119,7 @@ class UserSignupTests(unittest.TestCase):
 
 
 # 3. Ensure Login function works correctly
-class UserLoginTests(unittest.TestCase):
+class UserLoginTests(BaseTestCase):
 
     # Ensure login page loads correctly
     def test_login(self):
@@ -171,7 +171,7 @@ class UserLoginTests(unittest.TestCase):
 
 
 # 4. Ensure Account info update function works correctly
-class UserAccountTests(unittest.TestCase):
+class UserAccountTests(BaseTestCase):
 
     # Ensure Account page loads correctly when logged in
     def test_Account_logged_in(self):
@@ -226,7 +226,7 @@ class UserAccountTests(unittest.TestCase):
 
 
 # 5. Ensure Create item function works correctly
-class UserCreateItemTests(unittest.TestCase):
+class UserCreateItemTests(BaseTestCase):
 
     # Ensure Create item page loads correctly when logged in
     def test_create_item_logged_in(self):
@@ -265,7 +265,7 @@ class UserCreateItemTests(unittest.TestCase):
 
 
 # 6. Ensure Update/Delete item function works correctly
-class UserUpDelTests(unittest.TestCase):
+class UserUpDelTests(BaseTestCase):
 
     # Ensure update or delete options do no appear for items created by other users
     def test_update_restriction(self):
@@ -301,7 +301,7 @@ class UserUpDelTests(unittest.TestCase):
 
 
 # 7. Ensure Search bar works correctly
-class UserSearchTests(unittest.TestCase):
+class UserSearchTests(BaseTestCase):
 
     # Ensure search error messages function correctly with empty credentials
     def test_empty_search(self):
