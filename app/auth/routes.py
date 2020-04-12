@@ -58,10 +58,11 @@ def signup():
         try:
             db.session.add(user)
             db.session.commit()
+            flash('{} Signed up successfully'.format(user.name))
             return redirect(url_for('main.index'))
         except IntegrityError:
             db.session.rollback()
-            flash('ERROR! Unable to register {}. Please check your details are correct and resubmit'.format(
+            flash('ERROR! Unable to Sign up {}. Please check your details are correct and resubmit'.format(
                 form.email.data), 'error')
     return render_template('signup.html', form=form)
 
