@@ -6,6 +6,7 @@ import unittest
 import sqlite3
 from base import BaseTestCase
 
+
 # 1.Ensuring correct loading of basic pages and login required pages
 class LoadPageTest(BaseTestCase):
 
