@@ -6,6 +6,7 @@ from flask_testing import TestCase
 
 from run import app
 
+
 #Setting the config to Testconfig for unit tests
 class BaseTestCase(TestCase):
 
