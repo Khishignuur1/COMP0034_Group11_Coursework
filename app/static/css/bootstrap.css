@@ -5817,6 +5817,26 @@ a.badge-dark:focus, a.badge-dark.focus {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.home-text-1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: inherit;
+  font-size: 3.5vw;
+  color: #ffffff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.home-text-2 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font: inherit;
+  font-size: 4vw;
+  color: #ffffff;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 @media (min-width: 576px) {
     .list-group-horizontal-sm {
         -ms-flex-direction: row;
