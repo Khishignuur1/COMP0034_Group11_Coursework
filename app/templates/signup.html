@@ -2,8 +2,14 @@
 Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
 Adapted by 17075800 and 17062364
 #}
+
+{# Inherit a parent template called base.html #}
 {% extends "base.html" %}
+
+{# Add the title for this page #}
 {% block title %} Signup {% endblock %}
+
+{# Add the content for this page #}
 {% block content %}
     <div style="position: absolute; left: 35%;">
     {% from "_formhelpers.html" import render_field %}
