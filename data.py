@@ -6,6 +6,7 @@ Written by 17075800
 import sqlite3
 
 
+# Create database if the sqlite file is missing
 def create_db():
     mydb = sqlite3.connect('data.sqlite')
 
