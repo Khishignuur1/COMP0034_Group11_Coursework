@@ -27,7 +27,7 @@ class LoadPageTest(BaseTestCase):
     # Ensure Items page loads correctly
     def test_Items(self):
         tester = app.test_client(self)
-        response = tester.get('/item', content_type='html/text')
+        response = tester.get('/items', content_type='html/text')
         self.assertIn(b'Description', response.data)
 
     # 1.2.Ensuring correct loading of user login required pages and functions
