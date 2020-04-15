@@ -3,7 +3,14 @@ Based on https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask
 Adapted by 17075800
 #}
 
+
+{# Inherit a parent template called base.html #}
 {% extends "base.html" %}
+
+{# Add the title for this page #}
+{% block title %}Item{% endblock %}
+
+{# Add the content for this page #}
 {% block content %}
   <article class="media content-section">
     <img class="rounded-circle article-img" src="/static/imgs/default.jpg" style="height: 75px; width: 75px; margin-right: 25px;">
