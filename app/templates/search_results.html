@@ -3,8 +3,13 @@ Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
 Adapted by 17075800 and 17062364
 #}
 
+{# Inherit a parent template called base.html #}
 {% extends "base.html" %}
+
+{# Add the title for this page #}
 {% block title %}Search results{% endblock %}
+
+{# Add the content for this page #}
 {% block content %}
 {% if results|length %}
 {# Variable is not empty #}
