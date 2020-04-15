@@ -9,7 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from app import db
 
-
+# Handles the specific details of the User
 class User(UserMixin, db.Model):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
@@ -33,7 +33,7 @@ class User(UserMixin, db.Model):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-
+# Handles the specific details of the Item
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
