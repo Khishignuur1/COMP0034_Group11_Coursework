@@ -3,11 +3,16 @@ Based on https://github.com/UCLComputerScience/comp0034_flask_login_complete
 Adapted by 17075800
 #}
 
+{# Inherit a parent template called base.html #}
 {% extends 'base.html' %}
-{% from "_formhelpers.html" import render_field %}
+
+{# Add the title for this page #}
 {% block title %}Login{% endblock %}
+
+{# Add the content for this page #}
 {% block content %}
 <form method="post" novalidate style="position: absolute; left: 35%;">
+    {% from "_formhelpers.html" import render_field %}
     {{ form.hidden_tag() }}
     <dl style="width: 476px;">
         {{ render_field(form.email, class='form-control') }}
