@@ -3,8 +3,13 @@ Based on https://github.com/CoreyMSchafer/code_snippets/tree/master/Python/Flask
 Adapted by 17075800
 #}
 
+{# Inherit a parent template called base.html #}
 {% extends "base.html" %}
+
+{# Add the title for this page #}
 {% block title %}Items{% endblock %}
+
+{# Add the content for this page #}
 {% block content %}
     {% for item in items %}
         <article class="media content-section">
