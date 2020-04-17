@@ -59,7 +59,6 @@ def search():
         results = db.session.query(items).filter(
             or_(items.title.contains(term), items.content.contains(term), items.color.contains(term),
                 items.size.contains(term))).all()
-        # results = Student.query.filter(Student.email.contains(term)).all()
         if not results:
             flash("No matching items.")
             return redirect('/')

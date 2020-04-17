@@ -6,5 +6,5 @@
 
 
 <br>1. URL to your GitHub repository: https://github.com/Khishignuur1/COMP0034_Group11_Coursework
-<br>2. Steps to recreate the database for your app: sqlite file included
+<br>2. Steps to recreate the database for your app: sqlite file included 
 <br>3. Any other specific config required: None 
